@@ -26,4 +26,4 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
     - name: "Deploy on ec2"
-      run: "Deployment on ec2 instance"
+      run: echo "Deployment on ec2 instance"

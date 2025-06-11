@@ -17,12 +17,14 @@ jobs:
        ./shell.sh
 
   test-job:
+    needs: "build-job"
     runs-on: "ubuntu-latest"
     steps:
     - name: "Testing phase"
       run: echo "This is in testing phase"
 
   deploy-job:
+    needs: [test-job]
     runs-on: "ubuntu-latest"
     steps:
     - name: "Deploy on ec2"

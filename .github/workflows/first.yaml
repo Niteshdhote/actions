@@ -7,6 +7,9 @@ jobs:
     steps:
     - name: "Checkout repo"
       uses: actions/checkout@v4
+
+    - name: "Listing all files"
+      run: ls -all
     
     - name: "Executing shell script"
       run: ./shell.sh

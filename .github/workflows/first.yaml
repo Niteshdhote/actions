@@ -2,7 +2,7 @@ name: "My First Workflow"
 on: push
 
 jobs:
-  test-job:
+  build-job:
     runs-on: "ubuntu-latest"
     steps:
     - name: "Checkout repo"
@@ -15,3 +15,15 @@ jobs:
       run: |
        chmod +x shell.sh
        ./shell.sh
+
+  test-job:
+    runs-on: "ubuntu-latest"
+    steps:
+    - name: "Testing phase"
+      run: echo "This is in testing phase"
+
+  deploy-job:
+    runs-on: "ubuntu-latest"
+    steps:
+    - name: "Deploy on ec2"
+      run: "Deployment on ec2 instance"

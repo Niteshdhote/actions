@@ -8,8 +8,5 @@ jobs:
     - name: "Checkout repo"
       uses: actions/checkout@v4
     
-    - name: "Printing text"
-      run: |
-       echo "This is my first job"
-       ls -all
-       uptime
+    - name: "Executing shell script"
+      run: ./shell.sh

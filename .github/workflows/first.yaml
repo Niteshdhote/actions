@@ -21,7 +21,13 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
     - name: "Testing phase"
-      run: echo "This is in testing phase"
+      run: echo "This is in testing phase" >> abc.txt
+
+    - name: "Uploading artifact"
+      uses: actions/upload-artifact@v3
+      with:
+        name: "ABC file"
+        path: abc.txt
 
   deploy-job:
     needs: [test-job]
@@ -29,3 +35,11 @@ jobs:
     steps:
     - name: "Deploy on ec2"
       run: echo "Deployment on ec2 instance"
+
+    - name: "Downloading artifact"
+      uses: actions/download-artifact@v3
+      with:
+        name: "ABC file"
+
+    - name: "Checking files"
+      run: ls -all

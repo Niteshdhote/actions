@@ -13,6 +13,6 @@ jobs:
     steps:
     - name: "Build docker image"
       run: |
-        echo "docker build -t "$docker_tag" .
+        echo "docker build -t "$docker_tag" ."
         echo "docker run -it $image_name"
       

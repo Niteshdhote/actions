@@ -15,4 +15,10 @@ jobs:
       run: |
         echo "docker build -t "$docker_tag" ."
         echo "docker run -it $image_name"
+        
+  authentications:
+    runs-on: "ubuntu-latest"
+    steps:
+    - name: "docker auth"
+      run: echo "docker login --username ${{ vars.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}"
       

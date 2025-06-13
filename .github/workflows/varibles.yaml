@@ -1,6 +1,6 @@
 name: "Environment variables"
 
-On:
+on:
   push
 
 env:
@@ -12,7 +12,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
     - name: "Build docker image"
-      runs: |
+      run: |
         echo "docker build -t "$docker_tag" .
         echo "docker run -it $image_name"
       

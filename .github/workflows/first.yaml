@@ -46,6 +46,7 @@ jobs:
         name: "ABC file"
 
     - name: "Checking files"
+      timeout-minutes: 1
       run: | 
         ls -all
         sleep 200s

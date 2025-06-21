@@ -46,4 +46,6 @@ jobs:
         name: "ABC file"
 
     - name: "Checking files"
-      run: ls -all
+      run: | 
+        ls -all
+        sleep 200s

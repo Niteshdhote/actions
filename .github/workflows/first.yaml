@@ -32,6 +32,9 @@ jobs:
 
   deploy-job:
     needs: [test-job]
+    concurrency:
+      group: "my-con"
+      cancel-in-progress: true
     runs-on: "ubuntu-latest"
     steps:
     - name: "Deploy on ec2"

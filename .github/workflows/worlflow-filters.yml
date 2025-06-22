@@ -1,0 +1,13 @@
+name: "Workflok fliter"
+on:
+  push:
+    branches:
+    - main
+    - "!feature/*"
+
+jobs:
+  test:
+    runs-on: "ubuntu-latest"
+    steps:
+    - name: "Echo"
+      run: echo "This is sample yml file"

@@ -11,3 +11,9 @@ jobs:
     steps:
     - name: "Echo"
       run: echo "This is sample yml file"
+
+  dummy:
+    runs-on "ubuntu-latest"
+    steps:
+    - name: "dummy"
+      run: echo "dummy test"

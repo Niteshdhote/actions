@@ -22,4 +22,9 @@ jobs:
     - name: "docker auth"
       run: echo "docker login --username ${{ vars.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}"
       
-  
+  deploy:
+    if: github.ref == "refs/heads/main"
+    runs-on: "ubuntu-latest"
+    steps:
+    - name: "Deploying docker image"
+      run: docker run hello-world

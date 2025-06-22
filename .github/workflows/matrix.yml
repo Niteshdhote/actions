@@ -1,0 +1,16 @@
+name: "Matrix Comfiguration"
+on: workflow_dispatch
+
+jobs:
+  deploy:
+    strategy:
+      matrix:
+        os: [ "ubuntu-latest", "windows-latest" ]
+        images: [ "hello-world" ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Running on ${{ matrix.os }}
+        run: docker info
+
+      - name: Running on ${{ matrix.images }}
+        run: docker run ${{ matrix.images }}

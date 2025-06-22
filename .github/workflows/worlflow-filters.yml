@@ -5,6 +5,15 @@ on:
     - main
     - "!feature/*"
 
+  pull_request:
+    branches:
+    - main
+    types:
+    - opened
+    - closed
+    paths-ignore:
+    - README.md
+
 jobs:
   test:
     runs-on: "ubuntu-latest"
